@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Usuarios">
+        <menu>
+            <item
+                android:id="@+id/nav_reg_manto_usuarios"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Registro y mantto." />
+            <item
+                android:id="@+id/nav_list_usuarios"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Listado de usuarios" />
+        </menu>
+    </item>
+
+    <item android:title="Reservas">
+        <menu>
+            <item
+                android:id="@+id/nav_reg_reservas"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Registro de reservas" />
+            <item
+                android:id="@+id/nav_list_mantto_reservas"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Listado y mantto." />
+            <item
+                android:id="@+id/nav_hist_reservas"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Historial" />
+        </menu>
+    </item>
+
+    <item android:title="Canchas">
+        <menu>
+            <item
+                android:id="@+id/nav_reg_canchas"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Registro" />
+            <item
+                android:id="@+id/nav_list_canchas"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Listado" />
+        </menu>
+    </item>
+
+    <!--group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_reg_manto_usuarios"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Registro y mantto. de usuarios" />
+        <item
+            android:id="@+id/nav_list_usuarios"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Listado de usuarios" />
+        <item
+            android:id="@+id/nav_reg_reservas"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Registro de reservas" />
+        <item
+            android:id="@+id/nav_list_mantto_reservas"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Listado y mantto. de reservas" />
+        <item
+            android:id="@+id/nav_hist_reservas"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Historial de reservas" />
+        <item
+            android:id="@+id/nav_reg_canchas"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Registro de canchas" />
+        <item
+            android:id="@+id/nav_list_canchas"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Listado de canchas" />
+    </group-->
+
+    <!--item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item-->
+
+</menu>

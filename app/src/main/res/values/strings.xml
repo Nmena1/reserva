@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Reserva de Canchas</string>
+    <string name="editarReserva">Editar Reserva</string>
+    <string name="anularReserva">Anular Reserva</string>
+    <string name="title_activity_main_administrador">MainActivityAdministrador</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu_cliente1">MenuCliente1</string>
+
+</resources>

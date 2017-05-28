@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_crud_usuarios"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.fernando.recervascancha.CrudUsuarios"
+    android:orientation="vertical"
+    android:background="@drawable/soccer"
+    android:weightSum="1">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtUsuario"
+        android:hint="Usuario"
+        android:textColor="#050000"
+        android:editable="false" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/usuer" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtClave"
+        android:hint="Clave"
+        android:textColor="#050000"
+        android:password="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtNombres"
+        android:hint="Nombres"
+        android:textColor="#050000" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/edtApellidos"
+        android:hint="Apellidos"
+        android:textColor="#050000" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/edtTelefono"
+        android:hint="Telefono xxxx-xxxx"
+        android:inputType="phone"
+        android:phoneNumber="true"
+        android:textColor="#050000"
+        android:numeric="integer" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/edtCorreo"
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
+        android:textColor="#050000" />
+
+
+
+    <TextView
+        android:text="Tipo de usuario:"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:id="@+id/tvTipo"
+        android:gravity="center"
+        android:textColor="#050000" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:id="@+id/radioG" >
+
+        <RadioButton
+            android:text="Cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:id="@+id/rdbCliente"
+            android:textColor="#070000" />
+
+        <RadioButton
+            android:text="Administrador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdbAdministrador"
+            android:layout_weight="1"
+            android:checked="false"
+            android:textColor="#070000" />
+    </RadioGroup>
+
+    <TextView
+        android:text="Estado :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvEstado"
+        android:gravity="center"
+        android:textColor="#050000"
+        android:layout_gravity="right" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup"
+        android:layout_gravity="center_horizontal">
+
+        <RadioButton
+            android:text="Activo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:id="@+id/rdbActivo"
+            android:textColor="#070000" />
+
+        <RadioButton
+            android:text="Inactivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdbInactivo"
+            android:layout_weight="1"
+            android:checked="false"
+            android:textColor="#070000" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <Button
+            android:text="Crear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCrear"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Actualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnActualizar"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="Buscar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBuscar"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

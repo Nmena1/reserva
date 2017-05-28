@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_manteUsuarios"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Mantenimiento Usuario" />
+
+
+    </group>
+
+    <item android:title="Reservas">
+        <menu>
+            <item
+                android:id="@+id/nav_realizarReserva"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Registro de reservas" />
+            <item
+                android:id="@+id/nav_ListadoReservas1"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Listado y Mantto." />
+
+            <item
+                android:id="@+id/nav_HistorialReserva"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Historial" />
+        </menu>
+    </item>
+
+</menu>

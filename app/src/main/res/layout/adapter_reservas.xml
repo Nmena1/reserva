@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Numero De Reserva :"
+            android:id="@+id/textView8"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#040000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Reserva"
+            android:id="@+id/tvReservaAr"
+            android:textColor="#040000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Usuario :"
+            android:id="@+id/textView14"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#040000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Usuario"
+            android:id="@+id/tvUsuAr"
+            android:textColor="#040000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Cancha :"
+            android:id="@+id/textView12"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#040000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Cancha"
+            android:id="@+id/tvCanchaAr"
+            android:textColor="#040000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Fecha De Reserva :"
+            android:id="@+id/textView16"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#040000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Fecha"
+            android:id="@+id/tvFechaAr"
+            android:textColor="#040000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Horario :"
+            android:id="@+id/textView18"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#040000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Horario"
+            android:id="@+id/tvHorarioAr"
+            android:textColor="#040000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Estado :"
+            android:id="@+id/textView10"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#040000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Estado"
+            android:textColor="#040000"
+            android:id="@+id/tvEstadoAr" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textColor="@color/button_material_dark"
+        android:text="______________________________________________________" />
+</LinearLayout>

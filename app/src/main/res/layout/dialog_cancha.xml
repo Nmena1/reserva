@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/soccer"
+    android:padding="@dimen/dialog_body">
+
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding_between"
+        android:paddingTop="@dimen/padding_between"
+        android:text="registrar cancha"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/nombreCancha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/info_text"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:padding="@dimen/edit_text_padding"
+        android:password="false"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/entrar_boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:paddingBottom="@dimen/button_padding"
+        android:paddingTop="@dimen/button_padding"
+        android:text="Guardar"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/nombreCancha"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+</RelativeLayout>

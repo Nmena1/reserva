@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CrudUsuarios extends AppCompatActivity {
-
+//prueba
     TextView tvTipo , tvEstado;
     EditText edtUsuario, edtClave, edtNombres, edtApellidos, edtTelefono, edtCorreo, edtComentarios;
     RadioButton rdbAdministrador, rdbCliente , rdbActivo, rdbInactivo;

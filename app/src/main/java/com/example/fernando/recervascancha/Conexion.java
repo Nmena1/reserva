@@ -31,7 +31,7 @@ public class Conexion extends SQLiteOpenHelper {
         SQL = "create table estados (id_estado integer primary key AUTOINCREMENT, estado text not null)";
         db.execSQL(SQL);
 
-        SQL = "create table canchas (id_cancha integer primary key AUTOINCREMENT, nombre text not null, id_estado integer, FOREIGN KEY (id_estado) REFERENCES estados(id_estado))";
+        SQL = "create table canchas (id_cancha integer primary key AUTOINCREMENT, nombre text not null, estado texto, valor real)";
         db.execSQL(SQL);
 
         SQL = "create table tiempo_reservas (id_tiempo integer primary key AUTOINCREMENT, horas text)";

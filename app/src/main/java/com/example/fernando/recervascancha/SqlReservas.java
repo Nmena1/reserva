@@ -25,6 +25,7 @@ public class SqlReservas {
     private ArrayList arrayUsuario = new ArrayList();
     private ArrayList arrayNombre = new ArrayList();
     private ArrayList arrayApellido = new ArrayList();
+    private int id_cancha;
     private String nombre_cancha;
     private String estado_cancha;
     private int precio_cancha;
@@ -141,8 +142,23 @@ public class SqlReservas {
         this.comentarios = comentarios;
     }
 
+    //Tabla cancha
     public String getCancha() {return nombre_cancha;}
     public void setCancha(String nombre_cancha) {this.nombre_cancha = nombre_cancha;}
+
+    public int getId_cancha() {
+        return id_cancha;
+    }
+    public void setId_cancha(int id_cancha) {
+        this.id_cancha= id_cancha;
+    }
+
+    public String getNombre_cancha() {
+        return nombre_cancha;
+    }
+    public void setNombre_cancha(String nombre_cancha) {
+        this.nombre_cancha= nombre_cancha;
+    }
 
     public String getEstado_cancha() {return estado_cancha;}
     public void setEstado_cancha(String estado_cancha) {this.estado_cancha = estado_cancha;}
@@ -287,5 +303,23 @@ public class SqlReservas {
         SQLiteDatabase miBase = objCon.getWritableDatabase();
         miBase.execSQL(consultaSql);
 
+    }
+
+    public void buscarCancha(int pIdcancha, Context contexto){
+        setId_cancha(pIdcancha);
+        Conexion objCon = new Conexion(contexto);
+        SQLiteDatabase miBase = objCon.getWritableDatabase();
+
+        Cursor datos = miBase.rawQuery("select * from canchas where id_cancha = '"+id_cancha+"'",null);
+        if(datos.moveToFirst()){
+            setId_cancha(datos.getInt(0));
+            setNombre_cancha(datos.getString(1).toString());
+            setPrecio_cancha(datos.getInt(0));
+        }
+        else{
+            setId_usuario(-1);
+        }
+        miBase.close();
+        objCon.close();
     }
 }

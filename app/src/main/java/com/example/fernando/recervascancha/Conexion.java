@@ -1,6 +1,8 @@
 package com.example.fernando.recervascancha;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -12,6 +14,12 @@ public class Conexion extends SQLiteOpenHelper {
     public Conexion(Context context) {
         super(context, "reservasCetu", null, 1);
     }
+
+    public static final String tabla_canchas = "canchas";
+    public static final String id_cancha = "id_cancha";
+    public static final String nombre_cancha = "nombre";
+    public static final String estado_cancha = "estado";
+    public static final String precio_cancha = "precio_hora";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -31,8 +39,11 @@ public class Conexion extends SQLiteOpenHelper {
         SQL = "create table estados (id_estado integer primary key AUTOINCREMENT, estado text not null)";
         db.execSQL(SQL);
 
-        SQL = "create table canchas (id_cancha integer primary key AUTOINCREMENT, nombre text not null, estado texto, valor real)";
-        db.execSQL(SQL);
+        db.execSQL("create table "+ tabla_canchas +" ("+
+                id_cancha +" integer primary key AUTOINCREMENT, "+
+                nombre_cancha +"text not null, "+
+                estado_cancha +" text not null, "+
+                precio_cancha +" text not null)");
 
         SQL = "create table tiempo_reservas (id_tiempo integer primary key AUTOINCREMENT, horas text)";
         db.execSQL(SQL);
@@ -70,7 +81,23 @@ public class Conexion extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
 
+    public void AgregarCancha(String nombre, String estado, String precio){
+        ContentValues valores = new ContentValues();
+        valores.put(nombre_cancha, nombre);
+        valores.put(estado_cancha, estado);
+        valores.put(precio_cancha, precio);
+        this.getWritableDatabase().insert(tabla_canchas,null,valores);
+    }
 
+    public Cursor getCanchas(){
+        String columnas[]={id_cancha,nombre_cancha,estado_cancha,precio_cancha};
+        Cursor c = this.getReadableDatabase().query(tabla_canchas,columnas,null,null,null,null,null);
+        return c;
+    }
+
+    public void EliminarCancha(String nombre){
+        this.getWritableDatabase().delete(tabla_canchas,nombre_cancha+"=?", new String[]{nombre});
     }
 }

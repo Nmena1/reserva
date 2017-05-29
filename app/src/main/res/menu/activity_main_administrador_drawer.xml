@@ -34,13 +34,9 @@
     <item android:title="Canchas">
         <menu>
             <item
-                android:id="@+id/nav_reg_canchas"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Registro" />
-            <item
                 android:id="@+id/nav_list_canchas"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Listado" />
+                android:title="Administrar canchas" />
         </menu>
     </item>
 

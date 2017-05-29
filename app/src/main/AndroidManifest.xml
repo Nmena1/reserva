@@ -33,7 +33,9 @@
             android:label="@string/title_activity_menu_cliente1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CrudUsuariosWS" />
-        <activity android:name=".EditCancha"></activity>
+        <activity android:name=".EditCancha" />
+        <activity android:name=".CrudUsuarios2" />
+        <activity android:name=".MainActivity_Login"></activity>
     </application>
 
 </manifest>

@@ -25,6 +25,9 @@ public class SqlReservas {
     private ArrayList arrayUsuario = new ArrayList();
     private ArrayList arrayNombre = new ArrayList();
     private ArrayList arrayApellido = new ArrayList();
+    private String nombre_cancha;
+    private String estado_cancha;
+    private int precio_cancha;
 
     public String getEstado() {
         return estado;
@@ -137,6 +140,15 @@ public class SqlReservas {
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
     }
+
+    public String getCancha() {return nombre_cancha;}
+    public void setCancha(String nombre_cancha) {this.nombre_cancha = nombre_cancha;}
+
+    public String getEstado_cancha() {return estado_cancha;}
+    public void setEstado_cancha(String estado_cancha) {this.estado_cancha = estado_cancha;}
+
+    public int getPrecio_cancha() {return precio_cancha;}
+    public void setPrecio_cancha(int precio_cancha) {this.precio_cancha = precio_cancha;}
 
     public void login(String pUsuario, String pClave, Context contexto){
         setUsuario(pUsuario);
@@ -261,5 +273,19 @@ public class SqlReservas {
                 adaptador.add(codigo+"          "+nombre+"          "+tipo);
             }while (r.moveToNext());
         }*/
+    }
+
+    public void AgregarCancha(String nombre_cancha, String estado_cancha, Integer precio_cancha, Context contexto){
+
+        String consultaSql;
+        setCancha(nombre_cancha);
+        setEstado_cancha(estado_cancha);
+        setPrecio_cancha(precio_cancha);
+
+        consultaSql = "insert into canchas(nombre,estado,precio)" + "values('"+nombre_cancha+"','"+estado_cancha+"','"+precio_cancha+"')";
+        Conexion objCon = new Conexion(contexto);
+        SQLiteDatabase miBase = objCon.getWritableDatabase();
+        miBase.execSQL(consultaSql);
+
     }
 }

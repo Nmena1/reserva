@@ -56,11 +56,14 @@ public class MainActivity extends AppCompatActivity {
                             objMenu.putExtra("usuario",usuario);
                             objMenu.putExtra("tipo",tipo);
                             startActivity(objMenu);
+				 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+
                         }else{
                             Intent objMenu = new Intent(getApplicationContext(),MenuCliente1.class);
                             objMenu.putExtra("usuario",usuario);
                             objMenu.putExtra("tipo",tipo);
                             startActivity(objMenu);
+			 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         }
                     }
                 }
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent objRegistro = new Intent(getApplication(),CrudUsuarios.class);
                 startActivity(objRegistro);
+		overridePendingTransition(R.anim.left_out,R.anim.left_in);
 
             }
         });

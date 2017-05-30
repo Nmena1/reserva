@@ -92,36 +92,50 @@ public class MainActivityAdministrador extends AppCompatActivity
             objCrudUsuarios.putExtra("usuario",usuario);
             objCrudUsuarios.putExtra("tipo",tipo);
             startActivity(objCrudUsuarios);
+
+
         } else if (id == R.id.nav_list_usuarios) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),ListaUsuarios.class);
             objListaUsuarios.putExtra("usuario",usuario);
             objListaUsuarios.putExtra("tipo",tipo);
             startActivity(objListaUsuarios);
+	    overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
         } else if (id == R.id.nav_reg_reservas) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),Reservas.class);
             objListaUsuarios.putExtra("usuario",usuario);
             objListaUsuarios.putExtra("tipo",tipo);
             objListaUsuarios.putExtra("operacion",0);//creacion
             startActivity(objListaUsuarios);
+		overridePendingTransition(R.anim.left_in,R.anim.right_out);	
+
+
         } else if (id == R.id.nav_list_mantto_reservas) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),ListaReservas.class);
             objListaUsuarios.putExtra("usuario",usuario);
             objListaUsuarios.putExtra("tipo",tipo);
             startActivity(objListaUsuarios);
+		overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
         } else if (id == R.id.nav_hist_reservas) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),Historial.class);
             objListaUsuarios.putExtra("usuario",usuario);
             objListaUsuarios.putExtra("tipo",tipo);
             startActivity(objListaUsuarios);
+		overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
         } //else if (id == R.id.nav_reg_canchas) {
           //  Intent objCrudUsuario = new Intent(getApplicationContext(),CrudUsuarios.class);
           //  startActivity(objCrudUsuario);
+	//overridePendingTransition(R.anim.left_in,R.anim.right_out);
         //}
         else if (id == R.id.nav_list_canchas) {
             Intent objListaUsuarios = new Intent(getApplicationContext(), ListaCanchas.class);
             objListaUsuarios.putExtra("usuario", usuario);
             objListaUsuarios.putExtra("tipo", tipo);
             startActivity(objListaUsuarios);
+overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

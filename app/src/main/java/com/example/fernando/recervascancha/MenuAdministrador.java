@@ -50,6 +50,7 @@ public class MenuAdministrador extends AppCompatActivity {
                 Intent objCrudUsuarios = new Intent(getApplicationContext(),CrudUsuarios.class);
                 objCrudUsuarios.putExtra("usuario",usuario);
                 startActivity(objCrudUsuarios);
+		overridePendingTransition(R.anim.left_in,R.anim.right_out);
             }
         });
 
@@ -101,32 +102,44 @@ public class MenuAdministrador extends AppCompatActivity {
                     objCrudUsuarios.putExtra("usuario",usuario);
                     objCrudUsuarios.putExtra("tipo",tipo);
                     startActivity(objCrudUsuarios);
+			overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
                 }else if(groupPosition == 0 && childPosition == 1){
                     Intent objListaUsuarios = new Intent(getApplicationContext(),ListaUsuarios.class);
                     objListaUsuarios.putExtra("usuario",usuario);
                     objListaUsuarios.putExtra("tipo",tipo);
                     startActivity(objListaUsuarios);
+		overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
+
                 }else if (groupPosition == 1 && childPosition == 0){
                     Intent objListaUsuarios = new Intent(getApplicationContext(),Reservas.class);
                     objListaUsuarios.putExtra("usuario",usuario);
                     objListaUsuarios.putExtra("tipo",tipo);
                     objListaUsuarios.putExtra("operacion",0);//creacion
                     startActivity(objListaUsuarios);
+			overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
+
                 }else if (groupPosition == 1 && childPosition == 1){
                     Intent objListaUsuarios = new Intent(getApplicationContext(),ListaReservas.class);
                     objListaUsuarios.putExtra("usuario",usuario);
                     objListaUsuarios.putExtra("tipo",tipo);
                     startActivity(objListaUsuarios);
+			overridePendingTransition(R.anim.left_in,R.anim.right_out);
+
                 }else if (groupPosition == 1 && childPosition == 2){
                     Intent objListaUsuarios = new Intent(getApplicationContext(),Historial.class);
                     objListaUsuarios.putExtra("usuario",usuario);
                     objListaUsuarios.putExtra("tipo",tipo);
                     startActivity(objListaUsuarios);
+			overridePendingTransition(R.anim.left_in,R.anim.right_out);
                 }else if (groupPosition == 2 && childPosition == 0) {
                     Intent objListaUsuarios = new Intent(getApplicationContext(), ListaCanchas.class);
                     objListaUsuarios.putExtra("usuario", usuario);
                     objListaUsuarios.putExtra("tipo", tipo);
                     startActivity(objListaUsuarios);
+			overridePendingTransition(R.anim.left_in,R.anim.right_out);
                 }
 
                 return false;

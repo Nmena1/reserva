@@ -39,11 +39,11 @@ public class AdaptadorListaCancha extends ArrayAdapter {
         filav=inflar.inflate(R.layout.rowcancha,viewGroup,false);
        // TextView tvId = (TextView)filav.findViewById(R.id.tvId);
         TextView tvUsuario = (TextView)filav.findViewById(R.id.tvUsuarioC);
-        TextView tvNombre = (TextView)filav.findViewById(R.id.tvEstado);
-        TextView tvApellido = (TextView)filav.findViewById(R.id.tvPrecio);
+        TextView tvNombre = (TextView)filav.findViewById(R.id.tvEstadoC);
+        TextView tvApellido = (TextView)filav.findViewById(R.id.tvPrecioC);
         //tvId.setText(""+id.get(i));
           tvUsuario.setText(""+nombre.get(i));
-        tvNombre.setText(""+nombre.get(i));
+        tvNombre.setText(""+estado.get(i));
         tvApellido.setText(""+precio.get(i));
         return filav;
     }

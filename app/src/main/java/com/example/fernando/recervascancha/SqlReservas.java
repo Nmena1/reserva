@@ -28,7 +28,7 @@ public class SqlReservas {
     private int id_cancha;
     private String nombre_cancha;
     private String estado_cancha;
-    private int precio_cancha;
+    private String precio_cancha;
     //Tabla cancha
     private ArrayList arrayidcancha = new ArrayList();
     private ArrayList arraynombrecancha = new ArrayList();
@@ -161,7 +161,7 @@ public class SqlReservas {
         return estado_cancha;
     }
 
-    public int getPrecio_cancha() {
+    public String getPrecio_cancha() {
         return precio_cancha;
     }
 
@@ -193,7 +193,7 @@ public class SqlReservas {
         this.estado_cancha = estado_cancha;
     }
 
-    public void setPrecio_cancha(int precio_cancha) {
+    public void setPrecio_cancha(String precio_cancha) {
         this.precio_cancha = precio_cancha;
     }
 
@@ -338,7 +338,7 @@ public class SqlReservas {
         }*/
     }
 
-    public void AgregarCancha(String nombre_cancha, String estado_cancha, Integer precio_cancha, Context contexto){
+    public void AgregarCancha(String nombre_cancha, String estado_cancha, String precio_cancha, Context contexto){
 
         String consultaSql;
         setNombre_cancha(nombre_cancha);
@@ -369,20 +369,39 @@ public class SqlReservas {
         objCn.close();
     }
 
-    public void buscarCancha(int pIdcancha, Context contexto){
-        setId_cancha(pIdcancha);
+    public void buscarCancha(String nombre_c, Context contexto){
+        setNombre_cancha(nombre_c);
         Conexion objCon = new Conexion(contexto);
         SQLiteDatabase miBase = objCon.getWritableDatabase();
 
-        Cursor datos = miBase.rawQuery("select * from canchas where id_cancha = '"+id_cancha+"'",null);
+        Cursor datos = miBase.rawQuery("select * from canchas where nombre = '"+nombre_cancha+"'",null);
         if(datos.moveToFirst()){
             setId_cancha(datos.getInt(0));
             setNombre_cancha(datos.getString(1).toString());
-            setPrecio_cancha(datos.getInt(0));
+            setPrecio_cancha(datos.getString(3));
         }
         else{
             setId_usuario(-1);
         }
+        miBase.close();
+        objCon.close();
+    }
+
+    public void EditarCancha(String cNombre, String cEstado, String cPrecio,  int accion, Context contexto){
+        setNombre_cancha(cNombre);
+        setEstado_cancha(cEstado);
+        setPrecio_cancha(cPrecio);
+        String consultaSql;
+        if(accion == 1){
+            consultaSql = "insert into canchas (nombre,estado,precio_hora) " +
+                    "values('"+nombre_cancha+"','"+estado_cancha+"','"+precio_cancha+"')";
+        }
+        else{
+            consultaSql = "update canchas set nombre = '"+nombre_cancha+"',estado = '"+estado_cancha+"', precio_hora = '"+precio_cancha+"'";
+        }
+        Conexion objCon = new Conexion(contexto);
+        SQLiteDatabase miBase = objCon.getWritableDatabase();
+        miBase.execSQL(consultaSql);
         miBase.close();
         objCon.close();
     }

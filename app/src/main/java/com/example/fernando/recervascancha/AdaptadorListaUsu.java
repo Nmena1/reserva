@@ -40,7 +40,7 @@ public class AdaptadorListaUsu extends ArrayAdapter {
        // TextView tvId = (TextView)filav.findViewById(R.id.tvId);
         TextView tvUsuario = (TextView)filav.findViewById(R.id.tvUsuarioC);
         TextView tvNombre = (TextView)filav.findViewById(R.id.tvNombre);
-        TextView tvApellido = (TextView)filav.findViewById(R.id.tvPrecio);
+        TextView tvApellido = (TextView)filav.findViewById(R.id.tvPrecioC);
         //tvId.setText(""+id.get(i));
           tvUsuario.setText(""+usuario.get(i));
         tvNombre.setText(""+nombre.get(i));

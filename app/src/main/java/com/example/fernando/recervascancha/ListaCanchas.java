@@ -3,6 +3,7 @@ package com.example.fernando.recervascancha;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -15,18 +16,22 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaCanchas extends Activity {
+public class ListaCanchas extends AppCompatActivity {
 
     ListView Lista;
     Conexion db;
     List<String> item = null;
     Button Agregar;
+    ArrayAdapter<String> adapter;
     //SimpleCursorAdapter adapter;
+    SqlReservas objsql = new SqlReservas();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +39,19 @@ public class ListaCanchas extends Activity {
         setContentView(R.layout.activity_lista_canchas);
 
         Lista = (ListView)findViewById(R.id.listView_Lista);
-        VerCanchas();
-        Agregar=(Button)findViewById(R.id.btnNuevaCancha);
+        //adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
 
+       objsql.listadoCanchas(getApplicationContext());
+        adapter = new AdaptadorListaCancha(getApplicationContext(),
+                objsql.getArrayidcancha(),
+                objsql.getArraynombrecancha(),
+                objsql.getArrayestadocancha(),
+                objsql.getArraypreciocancha());
+
+        Lista.setAdapter(adapter);
+        //llenarCanchas();
+
+        Agregar=(Button)findViewById(R.id.btnNuevaCancha);
         Agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,34 +64,56 @@ public class ListaCanchas extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String p = String.valueOf(position);
-                Toast.makeText(getApplicationContext(),p,Toast.LENGTH_SHORT).show();
+                TextView txv = (TextView)view.findViewById(R.id.tvUsuarioC);
+                TextView txv2 = (TextView)view.findViewById(R.id.tvEstadoC);
+                TextView txv3 = (TextView)view.findViewById(R.id.tvPrecioC);
 
-                int pIdcancha=0;
-                SqlReservas objSqlC = new SqlReservas();
-                objSqlC.buscarCancha(pIdcancha,getApplicationContext());
-                int encontrado = objSqlC.getId_cancha();
-                objSqlC.buscarCancha(pIdcancha, getApplicationContext());
-                Intent intent = new Intent(getApplicationContext(), EditCancha.class);
+                Intent intent = new Intent(getApplicationContext(),EditCancha.class);
+                String nomCancha=txv.getText().toString();
+                String estCancha=txv2.getText().toString();
+                String preCancha=txv3.getText().toString();
+                //Toast.makeText(getApplicationContext(),nomCancha,Toast.LENGTH_SHORT).show();
+
+                intent.putExtra("nCancha",nomCancha);
+                intent.putExtra("eCancha",estCancha);
+                intent.putExtra("pCancha",preCancha);
                 startActivity(intent);
-                String i = String.valueOf(pIdcancha);
-                Toast.makeText(getApplicationContext(),i,Toast.LENGTH_SHORT).show();
-
             }
         });
-
     }
-    public void VerCanchas(){
+
+    public void llenarCanchas() {
+        Conexion objCon = new Conexion(getApplicationContext());
+        SQLiteDatabase miBase = objCon.getWritableDatabase();
+        String sql = "SELECT * FROM canchas";
+        Cursor datos = miBase.rawQuery(sql, null);
+        String codigo = "", usuario = "", tipo = "";
+        if (datos.moveToFirst()) {
+            do {
+                codigo = datos.getString(1);
+                usuario = datos.getString(2);
+                tipo = datos.getString(3);
+
+                //adapter
+                adapter.add(codigo + " " + usuario + " " + tipo);
+            } while (datos.moveToNext());
+        }
+    }
+
+    public void getCanchas(){
         db = new Conexion(this);
-        Cursor c = db.getCanchas();
+        Cursor cursor = db.getCanchas();
         item = new ArrayList<String>();
         String n="",e="",p="";
-        if (c.moveToFirst()){
+        int i;
+        if (cursor.moveToFirst()){
             do {
-                n = c.getString(1);
-                e = c.getString(2);
-                p = c.getString(3);
-                item.add("Cancha: "+n+" Estado: "+e+" Precio :$"+p);
-            }while (c.moveToNext());
+                i = cursor.getInt(0);
+                //n = cursor.getString(1);
+                e = cursor.getString(2);
+                p = cursor.getString(3);
+                item.add("Cancha: "+i+" Estado: "+e+" Precio :$"+p);
+            }while (cursor.moveToNext());
         }
         /*String [] from = new String[]{db.nombre_cancha,db.estado_cancha};
         int [] to = new int[]{android.R.id.text1,android.R.id.text2};
@@ -97,8 +134,8 @@ public class ListaCanchas extends Activity {
         }
 
     }
-/*
-    @Override
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;

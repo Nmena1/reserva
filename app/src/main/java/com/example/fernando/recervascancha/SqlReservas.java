@@ -29,6 +29,12 @@ public class SqlReservas {
     private String nombre_cancha;
     private String estado_cancha;
     private int precio_cancha;
+    //Tabla cancha
+    private ArrayList arrayidcancha = new ArrayList();
+    private ArrayList arraynombrecancha = new ArrayList();
+    private ArrayList arrayestadocancha = new ArrayList();
+    private ArrayList arraypreciocancha = new ArrayList();
+
 
     public String getEstado() {
         return estado;
@@ -142,29 +148,70 @@ public class SqlReservas {
         this.comentarios = comentarios;
     }
 
-    //Tabla cancha
-    public String getCancha() {return nombre_cancha;}
-    public void setCancha(String nombre_cancha) {this.nombre_cancha = nombre_cancha;}
 
     public int getId_cancha() {
         return id_cancha;
-    }
-    public void setId_cancha(int id_cancha) {
-        this.id_cancha= id_cancha;
     }
 
     public String getNombre_cancha() {
         return nombre_cancha;
     }
-    public void setNombre_cancha(String nombre_cancha) {
-        this.nombre_cancha= nombre_cancha;
+
+    public String getEstado_cancha() {
+        return estado_cancha;
     }
 
-    public String getEstado_cancha() {return estado_cancha;}
-    public void setEstado_cancha(String estado_cancha) {this.estado_cancha = estado_cancha;}
+    public int getPrecio_cancha() {
+        return precio_cancha;
+    }
 
-    public int getPrecio_cancha() {return precio_cancha;}
-    public void setPrecio_cancha(int precio_cancha) {this.precio_cancha = precio_cancha;}
+    public ArrayList getArrayidcancha() {
+        return arrayidcancha;
+    }
+
+    public ArrayList getArraynombrecancha() {
+        return arraynombrecancha;
+    }
+
+    public ArrayList getArrayestadocancha() {
+        return arrayestadocancha;
+    }
+
+    public ArrayList getArraypreciocancha() {
+        return arraypreciocancha;
+    }
+
+    public void setId_cancha(int id_cancha) {
+        this.id_cancha = id_cancha;
+    }
+
+    public void setNombre_cancha(String nombre_cancha) {
+        this.nombre_cancha = nombre_cancha;
+    }
+
+    public void setEstado_cancha(String estado_cancha) {
+        this.estado_cancha = estado_cancha;
+    }
+
+    public void setPrecio_cancha(int precio_cancha) {
+        this.precio_cancha = precio_cancha;
+    }
+
+    public void setArrayidcancha(ArrayList arrayidcancha) {
+        this.arrayidcancha = arrayidcancha;
+    }
+
+    public void setArraynombrecancha(ArrayList arraynombrecancha) {
+        this.arraynombrecancha = arraynombrecancha;
+    }
+
+    public void setArrayestadocancha(ArrayList arrayestadocancha) {
+        this.arrayestadocancha = arrayestadocancha;
+    }
+
+    public void setArrayipreciocancha(ArrayList arrayipreciocancha) {
+        this.arraypreciocancha = arrayipreciocancha;
+    }
 
     public void login(String pUsuario, String pClave, Context contexto){
         setUsuario(pUsuario);
@@ -294,15 +341,32 @@ public class SqlReservas {
     public void AgregarCancha(String nombre_cancha, String estado_cancha, Integer precio_cancha, Context contexto){
 
         String consultaSql;
-        setCancha(nombre_cancha);
+        setNombre_cancha(nombre_cancha);
         setEstado_cancha(estado_cancha);
         setPrecio_cancha(precio_cancha);
 
-        consultaSql = "insert into canchas(nombre,estado,precio)" + "values('"+nombre_cancha+"','"+estado_cancha+"','"+precio_cancha+"')";
+        consultaSql = "insert into canchas(nombre,estado,precio_hora)" + "values('"+nombre_cancha+"','"+estado_cancha+"','"+precio_cancha+"')";
         Conexion objCon = new Conexion(contexto);
         SQLiteDatabase miBase = objCon.getWritableDatabase();
         miBase.execSQL(consultaSql);
 
+    }
+
+    public void listadoCanchas(Context contexto) {
+        Conexion objCn = new Conexion(contexto);
+        SQLiteDatabase miBase = objCn.getWritableDatabase();
+
+        Cursor listadoCanchas = miBase.rawQuery("select s.id_cancha, s.nombre,s.estado,s.precio_hora from canchas s", null);
+        if (listadoCanchas != null) {
+            while (listadoCanchas.moveToNext()) {
+                arrayidcancha.add(listadoCanchas.getString(0));
+                arraynombrecancha.add(listadoCanchas.getString(1));
+                arrayestadocancha.add(listadoCanchas.getString(2));
+                arraypreciocancha.add(listadoCanchas.getString(3));
+            }
+        }
+        miBase.close();
+        objCn.close();
     }
 
     public void buscarCancha(int pIdcancha, Context contexto){

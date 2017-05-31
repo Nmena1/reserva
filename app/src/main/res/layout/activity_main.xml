@@ -11,40 +11,45 @@
     tools:context="com.example.fernando.recervascancha.MainActivity"
     android:orientation="vertical"
     android:background="@drawable/soccer"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:weightSum="1">
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/edtUsuario"
-        android:layout_margin="10dp"
-        android:hint="Usuario"
-        android:textAlignment="center" />
+        android:background="@color/bright_foreground_disabled_material_dark"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/edtClave"
-        android:layout_margin="10dp"
-        android:hint="Clave"
-        android:textAlignment="center" />
+        <EditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <Button
-        android:text="Ingresar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnIngresar"
-        android:layout_margin="10dp" />
+            android:hint="Usuario"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
 
-    <Button
-        android:text="Registrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnRegistro"
-        android:layout_margin="10dp"
-        android:layout_gravity="center_horizontal" />
+        <EditText
+            android:id="@+id/edtClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Clave"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingresar" />
+
+        <Button
+            android:id="@+id/btnRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar" />
+
+    </LinearLayout>
+
 </LinearLayout>

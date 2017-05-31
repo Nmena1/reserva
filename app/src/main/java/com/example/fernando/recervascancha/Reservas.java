@@ -189,6 +189,7 @@ public class Reservas extends AppCompatActivity {
 
         if (item.getItemId()==android.R.id.home){
             finish();
+            overridePendingTransition(R.anim.left_out,R.anim.right_in);
         }
 
         return super.onOptionsItemSelected(item);
@@ -201,5 +202,11 @@ public class Reservas extends AppCompatActivity {
         mes =calendario.get(Calendar.MONTH);
         dia = calendario.get(Calendar.DAY_OF_MONTH);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_out,R.anim.right_in);
     }
 }

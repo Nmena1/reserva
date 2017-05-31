@@ -76,9 +76,15 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent objRegistro = new Intent(getApplication(),CrudUsuarios.class);
                 startActivity(objRegistro);
-		overridePendingTransition(R.anim.left_out,R.anim.left_in);
+		overridePendingTransition(R.anim.right_out,R.anim.right_in);
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_out,R.anim.fade_out);
     }
 }

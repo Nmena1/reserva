@@ -92,6 +92,7 @@ public class MainActivityAdministrador extends AppCompatActivity
             objCrudUsuarios.putExtra("usuario",usuario);
             objCrudUsuarios.putExtra("tipo",tipo);
             startActivity(objCrudUsuarios);
+            overridePendingTransition(R.anim.left_in,R.anim.right_out);
 
 
         } else if (id == R.id.nav_list_usuarios) {
@@ -134,7 +135,7 @@ public class MainActivityAdministrador extends AppCompatActivity
             objListaUsuarios.putExtra("usuario", usuario);
             objListaUsuarios.putExtra("tipo", tipo);
             startActivity(objListaUsuarios);
-overridePendingTransition(R.anim.left_in,R.anim.right_out);
+        overridePendingTransition(R.anim.left_in,R.anim.right_out);
 
         }
 

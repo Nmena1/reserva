@@ -370,6 +370,7 @@ public class CrudUsuarios extends AppCompatActivity {
 
         if (item.getItemId()==android.R.id.home){
             finish();
+            overridePendingTransition(R.anim.right_out,R.anim.left_in);
         }
 
         return super.onOptionsItemSelected(item);
@@ -380,5 +381,12 @@ public class CrudUsuarios extends AppCompatActivity {
         Intent objRetorno = new Intent();
         setResult(RESULT_CANCELED,objRetorno);
         finish();
+        overridePendingTransition(R.anim.right_out,R.anim.left_in);
+    }
+//metodo al presionar hacia atras desde el menu de dispositivo
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.right_out,R.anim.left_in);
     }
 }

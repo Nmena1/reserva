@@ -69,16 +69,18 @@ public class ListaUsuarios extends AppCompatActivity {
 
         if (item.getItemId()==android.R.id.home){
             finish();
+            overridePendingTransition(R.anim.right_out,R.anim.right_in);
         }
 
         return super.onOptionsItemSelected(item);
 
     }
 
-
-
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.right_out,R.anim.right_in);
+    }
 
 /*
     public void listado(){

@@ -97,6 +97,7 @@ public class ListaReservas extends AppCompatActivity {
 
         if (item.getItemId()==android.R.id.home){
             finish();
+            overridePendingTransition(R.anim.right_out,R.anim.right_in);
         }
 
         return super.onOptionsItemSelected(item);
@@ -173,7 +174,9 @@ public class ListaReservas extends AppCompatActivity {
         });
     }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.right_out,R.anim.right_in);
+    }
 }

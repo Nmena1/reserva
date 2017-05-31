@@ -93,7 +93,7 @@ public class MenuCliente1 extends AppCompatActivity
             objCrudUsuarios1.putExtra("usuario",usuario);
             objCrudUsuarios1.putExtra("tipo",tipo);
             startActivity(objCrudUsuarios1);
-            overridePendingTransition(R.anim.left_in,R.anim.right_out);
+            overridePendingTransition(R.anim.right_out,R.anim.right_in);
 
         } else if (id == R.id.nav_realizarReserva) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),Reservas.class);
@@ -101,21 +101,21 @@ public class MenuCliente1 extends AppCompatActivity
             objListaUsuarios.putExtra("tipo",tipo);
             objListaUsuarios.putExtra("operacion",0);//creacion
             startActivity(objListaUsuarios);
-            overridePendingTransition(R.anim.left_in,R.anim.right_out);
+            overridePendingTransition(R.anim.right_out,R.anim.right_in);
 
         } else if (id == R.id.nav_ListadoReservas1) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),ListaReservas.class);
             objListaUsuarios.putExtra("usuario",usuario);
             objListaUsuarios.putExtra("tipo",tipo);
             startActivity(objListaUsuarios);
-            overridePendingTransition(R.anim.left_in,R.anim.right_out);
+            overridePendingTransition(R.anim.right_out,R.anim.right_in);
 
         } else if (id == R.id.nav_HistorialReserva) {
             Intent objListaUsuarios = new Intent(getApplicationContext(),Historial.class);
             objListaUsuarios.putExtra("usuario",usuario);
             objListaUsuarios.putExtra("tipo",tipo);
             startActivity(objListaUsuarios);
-            overridePendingTransition(R.anim.left_in,R.anim.right_out);
+            overridePendingTransition(R.anim.right_out,R.anim.right_in);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -24,7 +24,7 @@
         android:layout_margin="10dp"
         android:hint="Usuario"
         android:textAlignment="center"
-        android:background="@drawable/text_rounded"/>
+        />
 
     <EditText
         android:layout_width="match_parent"
@@ -34,7 +34,8 @@
         android:id="@+id/edtClave"
         android:layout_margin="10dp"
         android:hint="Clave"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        />
 
     <Button
         android:text="Ingresar"

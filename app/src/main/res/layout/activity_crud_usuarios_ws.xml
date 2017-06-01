@@ -177,7 +177,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnCrear"
             android:layout_weight="1"
-            android:background="@drawable/botonrondo"/>/>
+            android:background="@drawable/botonrondo"/>
 
         <Button
             android:text="Actualizar"
@@ -185,7 +185,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnActualizar"
             android:layout_weight="1"
-            android:background="@drawable/botonrondo"/>/>
+            android:background="@drawable/botonrondo"/>
 
         <Button
             android:text="Buscar"

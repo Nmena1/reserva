@@ -32,7 +32,8 @@
         android:padding="@dimen/edit_text_padding"
         android:password="false"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/text_rounded"/>
 
     <Button
         android:id="@+id/entrar_boton"
@@ -45,5 +46,6 @@
         android:textColor="@android:color/white"
         android:layout_below="@+id/nombreCancha"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/botonrondo"/>
 </RelativeLayout>

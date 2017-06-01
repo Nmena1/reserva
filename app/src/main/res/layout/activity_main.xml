@@ -21,7 +21,8 @@
         android:id="@+id/edtUsuario"
         android:layout_margin="10dp"
         android:hint="Usuario"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:background="@drawable/text_rounded"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -38,7 +39,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnIngresar"
-        android:layout_margin="10dp" />
+        android:layout_margin="10dp"
+        android:background="@drawable/botonrondo"
+        />
 
     <Button
         android:text="Registrar"
@@ -46,5 +49,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnRegistro"
         android:layout_margin="10dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/botonrondo"/>
 </LinearLayout>

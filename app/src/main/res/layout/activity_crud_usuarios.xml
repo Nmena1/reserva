@@ -22,6 +22,7 @@
         android:id="@+id/edtUsuario"
         android:hint="Usuario"
         android:textColor="#050000"
+        android:background="@drawable/text_rounded"
         android:editable="false" />
 
     <ImageView
@@ -39,6 +40,7 @@
         android:id="@+id/edtClave"
         android:hint="Clave"
         android:textColor="#050000"
+        android:background="@drawable/text_rounded"
         android:password="true" />
 
     <EditText
@@ -57,7 +59,8 @@
         android:ems="10"
         android:id="@+id/edtApellidos"
         android:hint="Apellidos"
-        android:textColor="#050000" />
+        android:textColor="#050000"
+        android:background="@drawable/text_rounded"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -68,6 +71,7 @@
         android:inputType="phone"
         android:phoneNumber="true"
         android:textColor="#050000"
+        android:background="@drawable/text_rounded"
         android:numeric="integer" />
 
     <EditText
@@ -77,7 +81,8 @@
         android:id="@+id/edtCorreo"
         android:hint="Correo"
         android:inputType="textEmailAddress"
-        android:textColor="#050000" />
+        android:textColor="#050000"
+        android:background="@drawable/text_rounded"/>
 
 
 

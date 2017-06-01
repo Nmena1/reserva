@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaCanchas extends Activity {
+//public class ListaCanchas extends Activity {
 public class ListaCanchas extends AppCompatActivity {
 
     ListView Lista;

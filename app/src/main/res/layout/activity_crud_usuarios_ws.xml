@@ -176,21 +176,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnCrear"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/botonrondo"/>/>
 
         <Button
             android:text="Actualizar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnActualizar"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/botonrondo"/>/>
 
         <Button
             android:text="Buscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnBuscar"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/botonrondo"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

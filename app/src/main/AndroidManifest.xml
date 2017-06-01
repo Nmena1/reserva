@@ -35,6 +35,7 @@
         <activity android:name=".CrudUsuariosWS" />
         <activity android:name=".EditCancha" />
         <activity android:name=".CrudUsuarios2" />
+        <activity android:name=".AgregarCancha" />
         <activity android:name=".MainActivity_Login"></activity>
     </application>
 

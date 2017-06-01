@@ -51,8 +51,16 @@ public class ListaCanchas extends Activity {
                 String p = String.valueOf(position);
                 Toast.makeText(getApplicationContext(),p,Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(),EditCancha.class);
+                int pIdcancha=0;
+                SqlReservas objSqlC = new SqlReservas();
+                objSqlC.buscarCancha(pIdcancha,getApplicationContext());
+                int encontrado = objSqlC.getId_cancha();
+                objSqlC.buscarCancha(pIdcancha, getApplicationContext());
+                Intent intent = new Intent(getApplicationContext(), EditCancha.class);
                 startActivity(intent);
+                String i = String.valueOf(pIdcancha);
+                Toast.makeText(getApplicationContext(),i,Toast.LENGTH_SHORT).show();
+
             }
         });
 

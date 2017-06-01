@@ -13,38 +13,38 @@ import java.util.ArrayList;
 /**
  * Created by Fernando on 21/05/2017.
  */
-public class AdaptadorListaUsu extends ArrayAdapter {
+public class AdaptadorListaCancha extends ArrayAdapter {
 
     private Context contexto;
     private  Cursor cursor;
     private ArrayList id = new ArrayList();
-    private ArrayList usuario = new ArrayList();
     private ArrayList nombre = new ArrayList();
-    private ArrayList apellido = new ArrayList();
+    private ArrayList estado = new ArrayList();
+    private ArrayList precio = new ArrayList();
     View filav;
 
-    public AdaptadorListaUsu(Context context,ArrayList id,ArrayList usuario,ArrayList nombres,ArrayList apellido) {
-        super(context,R.layout.row,usuario);
+    public AdaptadorListaCancha(Context context, ArrayList id, ArrayList nombre, ArrayList estado, ArrayList precio) {
+        super(context,R.layout.rowcancha,id);
         this.contexto = context;
         this.id = id;
-        this.usuario = usuario;
-        this.nombre = nombres;
-        this.apellido = apellido;
+        this.nombre = nombre;
+        this.estado = estado;
+        this.precio = precio;
 
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflar = (LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        filav=inflar.inflate(R.layout.row,viewGroup,false);
+        filav=inflar.inflate(R.layout.rowcancha,viewGroup,false);
        // TextView tvId = (TextView)filav.findViewById(R.id.tvId);
         TextView tvUsuario = (TextView)filav.findViewById(R.id.tvUsuarioC);
-        TextView tvNombre = (TextView)filav.findViewById(R.id.tvNombre);
+        TextView tvNombre = (TextView)filav.findViewById(R.id.tvEstado);
         TextView tvApellido = (TextView)filav.findViewById(R.id.tvPrecio);
         //tvId.setText(""+id.get(i));
-          tvUsuario.setText(""+usuario.get(i));
+          tvUsuario.setText(""+nombre.get(i));
         tvNombre.setText(""+nombre.get(i));
-        tvApellido.setText(""+apellido.get(i));
+        tvApellido.setText(""+precio.get(i));
         return filav;
     }
 }

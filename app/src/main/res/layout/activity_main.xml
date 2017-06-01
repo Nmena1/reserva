@@ -15,9 +15,11 @@
     android:weightSum="1">
 
     <LinearLayout
+
+        <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
+
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/edtUsuario"
@@ -54,41 +56,11 @@
         android:layout_margin="10dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/botonrondo"/>
-=======
         android:background="@color/bright_foreground_disabled_material_dark"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edtUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:hint="Usuario"
-            android:inputType="textPersonName"
-            android:textAlignment="center" />
-
-        <EditText
-            android:id="@+id/edtClave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:hint="Clave"
-            android:inputType="textPassword"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/btnIngresar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ingresar" />
-
-        <Button
-            android:id="@+id/btnRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrar" />
 
     </LinearLayout>
 
->>>>>>> f5ed04e313a193f2f1b69977c486974a06b39942
+
 </LinearLayout>

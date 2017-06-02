@@ -50,7 +50,8 @@
         android:ems="10"
         android:id="@+id/edtNombres"
         android:hint="Nombres"
-        android:textColor="#050000" />
+        android:textColor="#050000"
+        android:background="@drawable/text_rounded"/>
 
     <EditText
         android:layout_width="match_parent"

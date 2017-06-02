@@ -14,19 +14,17 @@
     android:gravity="center_vertical"
     android:weightSum="1">
 
-
-
         <EditText
             android:id="@+id/edtUsuario"
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/text_rounded"
             android:ems="10"
             android:hint="Usuario"
             android:inputType="textPersonName"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            />
 
         <EditText
             android:id="@+id/edtClave"
@@ -55,8 +53,5 @@
             android:layout_margin="10dp"
             android:background="@drawable/botonrondo"
             android:text="Registrar" />
-
-
-
 
 </LinearLayout>
